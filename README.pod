@@ -89,11 +89,11 @@ Optional parameters:
         product => $product,   # Forecast type (astro, civil, civillight, meteo, two)
         lat     => $lat,       # Latitude
         lon     => $lon,       # Longitude
-        output  => $format?,   # Output format (default C<json>)
-        unit    => $unit?,     # Units (default C<metric>)
-        lang    => $language?, # Language (default C<en>)
-        tzshift => $tz_shift?, # Timezone shift from UTC (hours, default C<0>)
-        ac      => $alt_cor?,  # Altitude correction (default C<0>)
+        output  => $format?,   # Output format (default json)
+        unit    => $unit?,     # Units (default metric)
+        lang    => $language?, # Language (default en)
+        tzshift => $tz_shift?, # Timezone shift from UTC (hours, default 0)
+        ac      => $alt_cor?,  # Altitude correction (default 0)
     );
 
     my %report = $w7t->get( ... );
@@ -110,11 +110,11 @@ Required parameters:
 
 =over 4
  
-=item * C<lat> : Latitude (-90 to 90). West is negative.
+=item * C<lat> : Latitude (-90 to 90). South is negative.
 
-=item * C<lon> : Longitude (-180 to 180). South is negative.
+=item * C<lon> : Longitude (-180 to 180). West is negative.
 
-=item * C<product> : Choose a forecast product from the available ones:
+=item * C<product> : Choose from the available forecast products:
 
 =over 4
 
@@ -126,12 +126,11 @@ Required parameters:
 
 =item * C<meteo> : A detailed meteorogical forecast including relative humidity and wind profile from 950hPa to 200hPa.
 
-=item * C<two> : A Two Week Overview forecast.
+=item * C<two> : A two week overview forecast.
 
 =back
 
 =back 
-
 
 Optional parameters (see the API documentation for further details):
 
